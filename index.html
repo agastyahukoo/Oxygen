@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Chatbot</title>
+    <title>Oxygen</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div id="chat-container">
         <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Type your message...">
-        <button onclick="getResponse()">Send</button>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="getResponse()">Send</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

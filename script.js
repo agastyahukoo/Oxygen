@@ -1,6 +1,8 @@
 // script.js
 function getResponse() {
     var input = document.getElementById("user-input").value;
+    if (!input.trim()) return; // Ignore empty input
+
     var chatBox = document.getElementById("chat-box");
 
     // User's message
@@ -15,4 +17,10 @@ function getResponse() {
 
     // Clear input field
     document.getElementById("user-input").value = "";
+}
+
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        getResponse();
+    }
 }

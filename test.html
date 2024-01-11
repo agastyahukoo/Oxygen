@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot UI</title>
+<style>
+  body {
+    background-color: #1E1E1E;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container {
+    width: 80%;
+    max-width: 600px;
+  }
+  .header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 30%;
+  }
+  .card h2 {
+    margin-top: 0;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Hello again</h1>
+    <p>Tell me what's on your mind, or pick a suggestion.</p>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <h2>Understand</h2>
+      <p>video insights</p>
+      <p>character from a book</p>
+      <p>explain JavaScript code</p>
+    </div>
+    <div class="card">
+      <h2>Create</h2>
+      <p>beginner's guide to...</p>
+      <p>language study plan</p>
+      <p>create unit test</p>
+    </div>
+    <div class="card">
+      <h2>Explore</h2>
+      <p>resume improvements</p>
+      <p>food hotspots</p>
+      <p>new language phrases</p>
+    </div>
+  </div>
+  <div class="footer">
+    <input type="text" placeholder="Enter a prompt here">
+  </div>
+</div>
+</body>
+</html>

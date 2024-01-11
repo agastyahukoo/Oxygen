@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Oxygen</title>
+    <title>Simple Chatbot</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!-- Add this inside the <body> tag -->
-<div id="login-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Login</button>
-    </div>
-</div>
+    <div id="content-wrapper">
+        <div id="description">
+            <h1>Project Chatbot</h1>
+            <p>Welcome to Project Chatbot! This simple AI chat interface allows you to interact with a basic chatbot. Log in to start chatting!</p>
+        </div>
 
-    <div id="chat-container">
-        <div id="chat-box"></div>
-        <div id="input-area">
-            <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-            <button onclick="getResponse()">Send</button>
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <div id="input-area">
+                <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)" disabled>
+                <button onclick="getResponse()" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
         </div>
     </div>
 

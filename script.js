@@ -1,15 +1,20 @@
 // script.js
+const responses = {
+    "hello": "Hello, I am AI",
+    "how are you": "I'm good, thank you for asking!",
+    "bye": "Goodbye! Have a great day!",
+    "What is your name": "My name is Oxygen, I am a basic prototype Chatbot with scheduled LLM implementation coming soon."
+    // Add more intents and responses here
+};
+
 function getResponse() {
-    var input = document.getElementById("user-input").value;
-    if (!input.trim()) return; // Ignore empty input
+    var input = document.getElementById("user-input").value.trim().toLowerCase();
+    if (!input) return; // Ignore empty input
 
     var chatBox = document.getElementById("chat-box");
 
     // User's message
     chatBox.innerHTML += "<div class='user'>You: " + input + "</div>";
-
-    // Clear input field
-    document.getElementById("user-input").value = "";
 
     // Show typing indicator
     chatBox.innerHTML += "<div class='bot typing-indicator-container'><span class='typing-indicator'></span><span class='typing-indicator'></span><span class='typing-indicator'></span></div>";
@@ -21,7 +26,7 @@ function getResponse() {
         document.querySelector('.typing-indicator-container').remove();
 
         // Bot's response
-        var botResponse = input.toLowerCase() === "hello" ? "Hello, I am AI" : "I don't understand that.";
+        var botResponse = responses[input] || "I don't understand that.";
         chatBox.innerHTML += "<div class='bot'>Bot: " + botResponse + "</div>";
 
         // Scroll to the latest message

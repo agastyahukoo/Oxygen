@@ -1,0 +1,223 @@
+/* Combined style.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+/* Login Modal Styles */
+#login-modal {
+    display: none; /* Hidden by default; will be displayed on page load */
+    position: fixed;
+    z-index: 2; /* Ensures modal appears above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Main Chat Interface Styles */
+#chat-interface {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 1200px;
+    height: 80vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+#chat-sidebar {
+    background-color: #333;
+    width: 25%;
+    display: none; /* Hidden for now, can be displayed as needed */
+}
+
+#chat-main {
+    background-color: #121212;
+    width: 100%; /* Adjusted to take full width */
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid grey;
+    text-align: center;
+}
+
+#chat-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.user-message, .bot-message {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #4a90e2;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #333;
+}
+
+/* Typing Indicator Styles */
+.typing-indicator {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.typing-indicator div {
+    height: 6px;
+    width: 6px;
+    margin: 0 3px;
+    background-color: white;
+    border-radius: 50%;
+    animation: typing 1.4s infinite alternate;
+}
+
+@keyframes typing {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+#chat-footer {
+    display: flex;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    align-items: center;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#send-button:hover {
+    background-color: #474747;
+}
+
+/* Styles for new UI elements based on the design provided in the image */
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.header {
+    color: #ffffff;
+    text-align: left;
+    margin: 32px 0;
+}
+
+.header h1 {
+    font-size: 2em;
+    margin: 0 0 8px 0;
+}
+
+.header p {
+    font-size: 1em;
+    margin: 0;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    width: calc(33% - 20px);
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 32px;
+}
+
+.category h2 {
+    font-size: 1.5em;
+    color: #FF645A;
+    margin: 0 0 16px 0;
+}
+
+.category p {
+    font-size: 1em;
+    margin: 8px 0;
+}
+
+.prompt {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 64px);
+    max-width: 800px;
+}
+
+.prompt input[type="text"] {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.prompt input::placeholder {
+    color: #aaaaaa;
+}

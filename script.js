@@ -1,40 +1,61 @@
-
-// Add this to the top of your script.js
-window.onload = function() {
-    document.querySelector('.close-button').onclick = function() {
-        document.getElementById('login-modal').style.display = 'none';
-    };
-    document.getElementById('login-modal').style.display = 'block';
+// Object containing predefined responses
+const responses = {
+    "hello": "Hello, I am AI",
+    "how are you": "I'm good, thank you for asking!",
+    "bye": "Goodbye! Have a great day!",
+    "what is your name": "My name is Oxygen, I am a basic prototype Chatbot with scheduled LLM implementation coming soon.",
+    // Add more intents and responses here
 };
 
+window.onload = function() {
+    var loginModal = document.getElementById('login-modal');
+    var closeButton = document.querySelector('.close-button');
+
+    // Show login modal
+    loginModal.style.display = 'block';
+
+    // Close button in login modal
+    closeButton.onclick = function() {
+        loginModal.style.display = 'none';
+    };
+
+    // Click outside modal to close
+    window.onclick = function(event) {
+        if (event.target === loginModal) {
+            loginModal.style.display = 'none';
+        }
+    };
+};
+
+// Login function
 function login() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    // Mock credentials (Replace with your own logic)
+    // Example credentials (replace with your authentication logic)
     if (username === "user" && password === "pass") {
         document.getElementById('login-modal').style.display = 'none';
+        enableChat();
     } else {
         alert("Incorrect username or password!");
     }
 }
 
-// script.js
-const responses = {
-    "hello": "Hello, I am AI",
-    "how are you": "I'm good, thank you for asking!",
-    "bye": "Goodbye! Have a great day!",
-    "What is your name": "My name is Oxygen, I am a basic prototype Chatbot with scheduled LLM implementation coming soon.",
-    // Add more intents and responses here
-};
+// Enable chat function
+function enableChat() {
+    var userInput = document.getElementById('user-input');
+    var sendButton = document.querySelector('#input-area button');
 
+    userInput.disabled = false;
+    sendButton.disabled = false;
+}
+
+// Function to handle user's input
 function getResponse() {
-    var input = document.getElementById("user-input").value.trim().toLowerCase();
+    var input = document.getElementById('user-input').value.trim().toLowerCase();
     if (!input) return; // Ignore empty input
 
-    var chatBox = document.getElementById("chat-box");
-
-    // User's message
+    var chatBox = document.getElementById('chat-box');
     chatBox.innerHTML += "<div class='user'>You: " + input + "</div>";
 
     // Show typing indicator
@@ -55,6 +76,7 @@ function getResponse() {
     }, 2000); // Adjust delay as needed
 }
 
+// Handle Enter key press for sending messages
 function handleKeyPress(event) {
     if (event.key === "Enter") {
         getResponse();

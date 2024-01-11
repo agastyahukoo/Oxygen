@@ -24,7 +24,7 @@ const responses = {
     "hello": "Hello, I am AI",
     "how are you": "I'm good, thank you for asking!",
     "bye": "Goodbye! Have a great day!",
-    "What is your name": "My name is Oxygen, I am a basic prototype Chatbot with scheduled LLM implementation coming soon."
+    "What is your name": "My name is Oxygen, I am a basic prototype Chatbot with scheduled LLM implementation coming soon.",
     // Add more intents and responses here
 };
 

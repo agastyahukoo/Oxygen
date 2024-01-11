@@ -1,59 +1,44 @@
-/* Add these styles to your style.css */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
+/* style.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e; /* Same as chat box */
+    background-color: #1e1e1e;
     color: #fff;
     margin: 0;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
+}
+
+#content-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1200px;
+}
+
+#description {
+    width: 40%;
+    padding: 20px;
+}
+
+#description h1 {
+    margin-bottom: 10px;
+}
+
+#description p {
+    line-height: 1.6;
 }
 
 #chat-container {
-    width: 400px;
-    height: 600px; /* Adjust height as needed */
-    background-color: #1e1e1e; /* Same as body for transparent look */
+    width: 40%;
+    background-color: #1e1e1e;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
     border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
 
@@ -61,6 +46,7 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     padding: 10px;
+    background-color: #252525;
 }
 
 #chat-box div {
@@ -69,7 +55,7 @@ body {
 }
 
 #chat-box div.bot {
-    color: #d1d1d1; /* Non-blue color for bot messages */
+    color: #d1d1d1;
 }
 
 #chat-box div.user {
@@ -79,7 +65,7 @@ body {
 
 #input-area {
     display: flex;
-    border-top: 1px solid #333; /* Border to distinguish input area */
+    border-top: 1px solid #333;
 }
 
 #user-input, button {
@@ -96,20 +82,56 @@ body {
 }
 
 button {
-    background-color: #a4a4a4; /* Non-blue color for the send button */
+    background-color: #a4a4a4;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #949494; /* Darker shade for hover effect */
+    background-color: #949494;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: black;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .typing-indicator {
     height: 8px;
     width: 8px;
     border-radius: 50%;
-    background-color: #d1d1d1; /* Same as bot messages */
+    background-color: #d1d1d1;
     margin: 0 3px;
     display: inline-block;
     animation: typing 0.5s infinite alternate;
